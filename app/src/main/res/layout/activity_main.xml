@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--</Upper Box for Guest and Home>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--</Upper box Home>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:padding="16dp"
+                android:text="@string/home"
+                style="@style/Origin"/>
+
+
+            <TextView
+                android:id="@+id/player_home_score"
+                style="@style/matchpoints"
+                android:padding="24dp"
+                android:text="@string/zero" />
+
+            <Button
+                android:id="@+id/buttonPlayerHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:onClick="addPointForPlayerHome"
+                android:text="@string/point" />
+        </LinearLayout>
+
+        <!--</View separating Home and Guest >-->
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray">
+        </View>
+
+        <!--</Upper Box for Guest>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:padding="16dp"
+                android:text="@string/guest"
+                style="@style/Origin"/>
+
+            <TextView
+                android:id="@+id/player_guest_score"
+                style="@style/matchpoints"
+                android:padding="24dp"
+                android:text="@string/zero" />
+
+
+            <Button
+                android:id="@+id/buttonPlayerGuest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:onClick="addPointForPlayerGuest"
+                android:text="@string/point" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--</Closing Box for Guest and Home>-->
+
+    <!--<Lower half with Sets, Games, and Reset>-->
+
+    <TextView
+        android:id="@+id/Sets_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sets"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="@style/games_sets"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:onClick="resetTheScore"
+        android:text="@string/reset"
+        android:id="@+id/button2" />
+
+    <!--<Extending the view from the upper Box>-->
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="180dp"
+        android:background="@android:color/darker_gray"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/view">
+
+    </View>
+
+    <!--</6x Values for Sets>-->
+
+    <TextView
+        android:id="@+id/setHome"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:paddingTop ="100dp"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/button2" />
+    <TextView
+        android:id="@+id/set1Home"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@id/setHome"
+        android:paddingTop="225dp"
+        />
+    <TextView
+        android:id="@+id/set2Home"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@id/set1Home"
+        android:paddingTop="350dp"
+        />
+    <TextView
+        android:id="@+id/setGuest"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:paddingTop ="100dp"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/button2" />
+    <TextView
+        android:id="@+id/set1Guest"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@id/setGuest"
+        android:paddingTop="225dp"
+        />
+    <TextView
+        android:id="@+id/set2Guest"
+        style="@style/Sets"
+        android:text="@string/zero"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@id/set1Guest"
+        android:paddingTop="350dp"
+        />
+
+    <!--</Big case letter for game count>-->
+
+    <TextView
+        android:text="@string/zero"
+        style="@style/big_case"
+        android:layout_alignTop="@+id/view"
+        android:layout_toStartOf="@+id/button2"
+        android:layout_marginEnd="26dp"
+        android:layout_marginTop="19dp"
+        android:id="@+id/gameHome"
+        android:layout_alignBottom="@+id/view" />
+    <TextView
+        android:text="@string/zero"
+        style="@style/big_case"
+        android:layout_alignTop="@+id/view"
+        android:layout_toEndOf="@+id/button2"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/view" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        style="@style/games_sets"
+        android:text="@string/games"
+        android:rotation="90"
+        android:layout_marginTop="24dp"
+        android:id="@+id/gameGuest"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

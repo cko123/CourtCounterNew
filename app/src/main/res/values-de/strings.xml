@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CourtCounter</string>
+    <string name="games">Spiele</string>
+    <string name="guest">Gast</string>
+    <string name="home">Heim</string>
+    <string name="point">Punkt!</string>
+    <string name="reset">Reset</string>
+    <string name="sets">Sätze</string>
+    <string name="zero">0</string>
+</resources>

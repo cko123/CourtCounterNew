@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CourtCounter</string>
+    <string name="home">Home</string>
+    <string name="guest">Guest</string>
+    <string name="zero">0</string>
+    <string name="sets">Sets</string>
+    <string name="games">Games</string>
+    <string name="point">Scored!</string>
+    <string name="reset">Reset</string>
+</resources>
