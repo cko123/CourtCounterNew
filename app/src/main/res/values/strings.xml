@@ -7,4 +7,5 @@
     <string name="games">Games</string>
     <string name="point">Scored!</string>
     <string name="reset">Reset</string>
+    <string name="plus">+</string>
 </resources>

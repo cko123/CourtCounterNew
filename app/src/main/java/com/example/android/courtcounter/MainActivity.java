@@ -11,18 +11,18 @@ public class MainActivity extends AppCompatActivity {
      * setting all global integers
      */
 
-    int playerHomeCount= 0;
-    int playerGuestCount = 0;
+    int playerHomeCount;
+    int playerGuestCount;
     String playerHomeAd = "";
     String playerGuestAd = "";
-    int playerHomeSet1Count = 0;
-    int playerGuestSet1Count = 0;
-    int playerHomeSet2Count = 0;
-    int playerGuestSet2Count = 0;
-    int playerHomeSet3Count = 0;
-    int playerGuestSet3Count = 0;
-    int playerHomeGameCount = 0;
-    int playerGuestGameCount = 0;
+    int playerHomeSet1Count;
+    int playerGuestSet1Count;
+    int playerHomeSet2Count;
+    int playerGuestSet2Count;
+    int playerHomeSet3Count;
+    int playerGuestSet3Count;
+    int playerHomeGameCount;
+    int playerGuestGameCount;
 
 
     TextView playerHomePoints;
@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
             displayScoreHome();
 
         } else if (playerGuestAd.equals("ADV")) {
-                playerGuestCount = 40;
-                playerHomeCount = 40;
-                playerHomeAd = "";
-                playerGuestAd = "";
-                displayScoreHome();
-                displayScoreGuest();
+            playerGuestCount = 40;
+            playerHomeCount = 40;
+            playerHomeAd = "";
+            playerGuestAd = "";
+            displayScoreHome();
+            displayScoreGuest();
 
         } else if (playerHomeCount == 40 & playerGuestCount == 40 & playerHomeAd.equals("") & playerGuestAd.equals("")) {
             playerGuestAd = "";
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             displayScoreHome();
             displayScoreGuest();
 
-        } else  {
+        } else {
             playerHomeCount = 40;
             displayScoreHome();
         }
@@ -97,13 +97,13 @@ public class MainActivity extends AppCompatActivity {
         if (playerHomeSet1Count >= 5 && playerGuestSet1Count >= 5) {
             if (playerHomeSet1Count < 7)
                 playerHomeSet1Count++;
-        } else if (playerHomeSet1Count < 5){
-                playerHomeSet1Count++;
+        } else if (playerHomeSet1Count < 5) {
+            playerHomeSet1Count++;
         }
         displaySetScore1Home();
     }
 
-    public void addSetPlayerHome2 (View view) {
+    public void addSetPlayerHome2(View view) {
         if (playerHomeSet2Count >= 5 && playerGuestSet2Count >= 5) {
             if (playerHomeSet2Count < 7)
                 playerHomeSet2Count++;
@@ -112,18 +112,19 @@ public class MainActivity extends AppCompatActivity {
         }
         displaySetScore2Home();
     }
+
     public void addSetPlayerHome3(View view) {
         if (playerHomeSet3Count >= 5 && playerGuestSet3Count >= 5) {
             if (playerHomeSet3Count < 7)
                 playerHomeSet3Count++;
-        } else if (playerHomeSet3Count < 5){
+        } else if (playerHomeSet3Count < 5) {
             playerHomeSet3Count++;
         }
         displaySetScore3Home();
     }
 
-    public void addGameHome(View view){
-        if(playerHomeGameCount < 3){
+    public void addGameHome(View view) {
+        if (playerHomeGameCount < 3) {
             playerHomeGameCount++;
         }
         displayGameHome();
@@ -134,70 +135,72 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void addPointForPlayerGuest(View v) {
-            if (playerGuestCount < 30) {
-                playerGuestCount = playerGuestCount +15;
-                displayScoreGuest();
-            } else if (playerHomeAd.equals("ADV")) {
-                playerGuestCount = 40;
-                playerHomeCount = 40;
-                playerHomeAd = "";
-                playerGuestAd ="";
-                displayScoreGuest();
-                displayScoreHome();
-                
-            } else if (playerHomeCount == 40 & playerGuestCount == 40 & playerHomeAd.equals("") & playerGuestAd.equals("")) {
-                playerGuestAd= "ADV";
-                playerHomeAd = "";
-                displayGuestAD();
-                displayScoreHome();
+        if (playerGuestCount < 30) {
+            playerGuestCount = playerGuestCount + 15;
+            displayScoreGuest();
+        } else if (playerHomeAd.equals("ADV")) {
+            playerGuestCount = 40;
+            playerHomeCount = 40;
+            playerHomeAd = "";
+            playerGuestAd = "";
+            displayScoreGuest();
+            displayScoreHome();
 
-            } else if (playerGuestCount == 40 && playerHomeCount != 40 | (playerGuestAd.equals("ADV"))) {
-                playerGuestAd = "";
-                playerHomeAd = "";
-                playerGuestCount = 0;
-                playerHomeCount = 0;
-                displayScoreGuest();
-                displayScoreHome();
+        } else if (playerHomeCount == 40 & playerGuestCount == 40 & playerHomeAd.equals("") & playerGuestAd.equals("")) {
+            playerGuestAd = "ADV";
+            playerHomeAd = "";
+            displayGuestAD();
+            displayScoreHome();
 
-            } else  {
-                playerGuestCount = 40;
-                displayScoreGuest();
-            }
+        } else if (playerGuestCount == 40 && playerHomeCount != 40 | (playerGuestAd.equals("ADV"))) {
+            playerGuestAd = "";
+            playerHomeAd = "";
+            playerGuestCount = 0;
+            playerHomeCount = 0;
+            displayScoreGuest();
+            displayScoreHome();
+
+        } else {
+            playerGuestCount = 40;
+            displayScoreGuest();
+        }
     }
 
     public void addSetPlayerGuest1(View view) {
         if (playerHomeSet1Count >= 5 && playerGuestSet1Count >= 5) {
             if (playerGuestSet1Count < 7)
                 playerGuestSet1Count++;
-        } else if(playerGuestSet1Count < 6) {
+        } else if (playerGuestSet1Count < 6) {
             playerGuestSet1Count++;
-        } else if (playerGuestSet1Count == 7 | playerHomeSet1Count == 7){
+        } else if (playerGuestSet1Count == 7 | playerHomeSet1Count == 7) {
             playerGuestSet1Count = playerHomeSet1Count;
             playerHomeSet1Count = playerGuestSet1Count;
         }
 
         displaySetScore1Guest();
     }
+
     public void addSetPlayerGuest2(View view) {
         if (playerHomeSet2Count >= 5 && playerGuestSet2Count >= 5) {
             if (playerGuestSet2Count < 7)
                 playerGuestSet2Count++;
-        } else if(playerGuestSet2Count < 6) {
+        } else if (playerGuestSet2Count < 6) {
             playerGuestSet2Count++;
-        } else if (playerGuestSet2Count == 7 | playerHomeSet2Count == 7){
+        } else if (playerGuestSet2Count == 7 | playerHomeSet2Count == 7) {
             playerGuestSet2Count = playerHomeSet2Count;
             playerHomeSet2Count = playerGuestSet2Count;
         }
 
         displaySetScore2Guest();
     }
+
     public void addSetPlayerGuest3(View view) {
         if (playerHomeSet3Count >= 5 && playerGuestSet3Count >= 5) {
             if (playerGuestSet3Count < 7)
                 playerGuestSet3Count++;
-        } else if(playerGuestSet3Count < 6) {
+        } else if (playerGuestSet3Count < 6) {
             playerGuestSet3Count++;
-        } else if (playerGuestSet3Count == 7 | playerHomeSet3Count == 7){
+        } else if (playerGuestSet3Count == 7 | playerHomeSet3Count == 7) {
             playerGuestSet3Count = playerHomeSet3Count;
             playerHomeSet3Count = playerGuestSet3Count;
         }
@@ -205,8 +208,8 @@ public class MainActivity extends AppCompatActivity {
         displaySetScore3Guest();
     }
 
-    public void addGameGuest(View view){
-        if(playerGuestGameCount < 3){
+    public void addGameGuest(View view) {
+        if (playerGuestGameCount < 3) {
             playerGuestGameCount++;
         }
         displayGameGuest();
@@ -246,7 +249,8 @@ public class MainActivity extends AppCompatActivity {
     public void displayScoreGuest() {
         playerGuestPoints.setText(String.valueOf(playerGuestCount));
     }
-    public void displayHomeAD(){
+
+    public void displayHomeAD() {
         playerHomePoints.setText(String.valueOf(playerHomeAd));
     }
 
@@ -257,28 +261,34 @@ public class MainActivity extends AppCompatActivity {
     public void displaySetScore1Home() {
         playerHomeSet1.setText(String.valueOf(playerHomeSet1Count));
     }
+
     public void displaySetScore2Home() {
         playerHomeSet2.setText(String.valueOf(playerHomeSet2Count));
     }
+
     public void displaySetScore3Home() {
         playerHomeSet3.setText(String.valueOf(playerHomeSet3Count));
     }
-   public void displaySetScore1Guest(){
-    playerGuestSet1.setText(String.valueOf(playerGuestSet1Count));
-}
 
-   public  void displaySetScore2Guest(){
-    playerGuestSet2.setText(String.valueOf(playerGuestSet2Count));
-}
-   public void displaySetScore3Guest(){
-    playerGuestSet3.setText(String.valueOf(playerGuestSet3Count));
-}
-   public void displayGameHome(){
-    playerHomeGame.setText(String.valueOf(playerHomeGameCount));
-}
-    public void displayGameGuest(){
-    playerGuestGame.setText(String.valueOf(playerGuestGameCount));
-}
+    public void displaySetScore1Guest() {
+        playerGuestSet1.setText(String.valueOf(playerGuestSet1Count));
+    }
+
+    public void displaySetScore2Guest() {
+        playerGuestSet2.setText(String.valueOf(playerGuestSet2Count));
+    }
+
+    public void displaySetScore3Guest() {
+        playerGuestSet3.setText(String.valueOf(playerGuestSet3Count));
+    }
+
+    public void displayGameHome() {
+        playerHomeGame.setText(String.valueOf(playerHomeGameCount));
+    }
+
+    public void displayGameGuest() {
+        playerGuestGame.setText(String.valueOf(playerGuestGameCount));
+    }
 }
 
 

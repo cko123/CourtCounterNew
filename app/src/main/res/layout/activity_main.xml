@@ -18,9 +18,9 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/Origin"
                 android:padding="16dp"
-                android:text="@string/home"
-                style="@style/Origin"/>
+                android:text="@string/home" />
 
 
             <TextView
@@ -46,8 +46,7 @@
             android:layout_width="1dp"
             android:layout_height="220dp"
             android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray">
-        </View>
+            android:background="@android:color/darker_gray"></View>
 
         <!--</Upper Box for Guest>-->
 
@@ -58,9 +57,9 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/Origin"
                 android:padding="16dp"
-                android:text="@string/guest"
-                style="@style/Origin"/>
+                android:text="@string/guest" />
 
             <TextView
                 android:id="@+id/player_guest_score"
@@ -87,15 +86,15 @@
 
     <TextView
         android:id="@+id/Sets_Text"
+        style="@style/games_sets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sets"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        style="@style/games_sets"
-        />
+        android:layout_centerVertical="true"
+        android:text="@string/sets" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -104,18 +103,17 @@
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
         android:onClick="resetTheScore"
-        android:text="@string/reset"
-        android:id="@+id/button2" />
+        android:text="@string/reset" />
 
     <!--<Extending the view from the upper Box>-->
 
     <View
+        android:id="@+id/view"
         android:layout_width="1dp"
         android:layout_height="180dp"
-        android:background="@android:color/darker_gray"
         android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:id="@+id/view">
+        android:background="@android:color/darker_gray">
 
     </View>
 
@@ -124,80 +122,166 @@
     <TextView
         android:id="@+id/setHome"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:paddingTop ="100dp"
+        android:layout_alignStart="@+id/button2"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/button2" />
+        android:paddingTop="100dp"
+        android:text="@string/zero" />
+
     <TextView
         android:id="@+id/set1Home"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:layout_centerVertical="true"
         android:layout_alignStart="@id/setHome"
+        android:layout_centerVertical="true"
         android:paddingTop="225dp"
-        />
+        android:text="@string/zero" />
+
     <TextView
         android:id="@+id/set2Home"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@id/set1Home"
+        android:layout_centerVertical="true"
         android:paddingTop="350dp"
-        />
+        android:text="@string/zero" />
+
     <TextView
         android:id="@+id/setGuest"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:paddingTop ="100dp"
+        android:layout_alignEnd="@+id/button2"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/button2" />
+        android:paddingTop="100dp"
+        android:text="@string/zero" />
+
     <TextView
         android:id="@+id/set1Guest"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:layout_centerVertical="true"
         android:layout_alignStart="@id/setGuest"
+        android:layout_centerVertical="true"
         android:paddingTop="225dp"
-        />
+        android:text="@string/zero" />
+
     <TextView
         android:id="@+id/set2Guest"
         style="@style/Sets"
-        android:text="@string/zero"
-        android:layout_centerVertical="true"
         android:layout_alignStart="@id/set1Guest"
+        android:layout_centerVertical="true"
         android:paddingTop="350dp"
-        />
+        android:text="@string/zero" />
 
     <!--</Big case letter for game count>-->
 
     <TextView
-        android:text="@string/zero"
+        android:id="@+id/gameHome"
         style="@style/big_case"
+        android:layout_alignBottom="@+id/view"
         android:layout_alignTop="@+id/view"
-        android:layout_toStartOf="@+id/button2"
         android:layout_marginEnd="26dp"
         android:layout_marginTop="19dp"
-        android:id="@+id/gameHome"
-        android:layout_alignBottom="@+id/view" />
-    <TextView
-        android:text="@string/zero"
-        style="@style/big_case"
-        android:layout_alignTop="@+id/view"
-        android:layout_toEndOf="@+id/button2"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="19dp"
-        android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/view" />
+        android:layout_toStartOf="@+id/button2"
+        android:text="@string/zero" />
 
     <TextView
+        android:id="@+id/gameGuest"
+        style="@style/big_case"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignTop="@+id/view"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/button2"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/textview2"
+        style="@style/games_sets"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        style="@style/games_sets"
-        android:text="@string/games"
-        android:rotation="90"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/gameGuest"
         android:layout_marginTop="24dp"
-        android:id="@+id/gameGuest"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignParentEnd="true" />
+        android:rotation="90"
+        android:text="@string/games" />
+
+    <Button
+        android:id="@+id/buttonPlusGuest"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="36dp"
+        android:onClick="addGameGuest"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusHome"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="24dp"
+        android:onClick="addGameHome"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusHome3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/gameHome"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/set2Home"
+        android:onClick="addSetPlayerHome3"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusHome2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/gameHome"
+        android:layout_marginBottom="69dp"
+        android:layout_toStartOf="@+id/set2Home"
+        android:onClick="addSetPlayerHome2"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusHome1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/gameHome"
+        android:layout_marginBottom="130dp"
+        android:layout_toStartOf="@+id/set2Home"
+        android:onClick="addSetPlayerHome1"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusGuest3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/buttonPlusGuest"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@id/set2Guest"
+        android:onClick="addSetPlayerGuest3"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusGuest2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/buttonPlusGuest"
+        android:layout_marginBottom="69dp"
+        android:layout_toEndOf="@id/set2Guest"
+        android:onClick="addSetPlayerGuest2"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/buttonPlusGuest1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/buttonPlusGuest"
+        android:layout_marginBottom="130dp"
+        android:layout_toEndOf="@id/set2Guest"
+        android:onClick="addSetPlayerGuest1"
+        android:text="@string/plus" />
 
 </RelativeLayout>
